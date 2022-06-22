@@ -3,13 +3,13 @@ from django.db import models
 import uuid
 class Kind(models.Model):
     """describes a kind of vehicle, eg a car, Jeep, truck, bike"""
-    name=models.CharField(max_length=200, help_text='Please enter the kind of this car')
+    name=models.CharField(max_length=200, help_text='Please enter the kind of this vehicle')
     """util methods for this table"""
     def __str__(self):
         return self.name
 
 class Vehicle(models.Model):
-    """describes a vehicle e.g toyota camry, mercedes jeep, mack truck, yatsuchi bike"""
+    """describes a vehicle e.g toyota camry, mercedes ES2010, Mack WE123, Yatsuchi Explorer bike"""
     name=models.CharField(max_length=200)
     manufacturer=models.ForeignKey('Manufacturer', on_delete=models.SET_NULL, null=True)
     summary=models.TextField(max_length=1000,
@@ -29,7 +29,6 @@ class Manufacturer(models.Model):
     founded=models.DateField(null=True, blank=True)
     class Meta:
         ordering=['company_name',]
-
     def __str__(self):
         return f'{self.company_name}-{self.founded}'
 

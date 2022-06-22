@@ -1,0 +1,14 @@
+{%  extends "base_template.html" %}
+
+{% block content %}
+    <h1>Car Rental Office</h1>
+    <p>Welcome to the Lagos Car Rental Office, developed by the <em>Torilo Academy team</em></p>
+    <h2>Offerings Available:</h2>
+    <p>The Rental office has the following record:</p>
+    <ul>
+        <li><strong>Vehicles:</strong> {{ num_vehicle }}</li>
+        <li><strong>Sample:</strong> {{ num_vehicle_instance }}</li>
+        <li><strong>Samples available:</strong> {{ num_instances_available }}</li>
+        <li><strong>Authors:</strong> {{ num_vehicle }}</li>
+    </ul>
+{% endblock %}
